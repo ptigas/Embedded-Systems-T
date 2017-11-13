@@ -116,7 +116,7 @@ double distance_between_coordinates(int x1, int y1, int x2, int y2) {
 }
 
 /**
- * Q8: Echo program
+ * Q8: Time program
  */
 
 void run_time_conversion(void) {
