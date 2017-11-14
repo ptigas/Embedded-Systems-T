@@ -14,7 +14,7 @@ $(EXE): $(OBJ)
 build/%.o: %.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
-	gcc -O0 -g0 -Wall -Wno-free-nonheap-object -Wno-return-local-addr -Wno-uninitialized -c -o "$@" "$<"
+	gcc -O0 -g0 -Wall -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
