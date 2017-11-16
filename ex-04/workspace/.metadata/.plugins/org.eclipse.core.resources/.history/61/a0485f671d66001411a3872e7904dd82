@@ -1,0 +1,20 @@
+#include "cute.h"
+#include "demo.h"
+
+int plus(int lhs, int rhs) {
+	return lhs + rhs;
+}
+
+int minus(int lhs, int rhs) {
+	return lhs - rhs;
+}
+
+void testZeroPlusZero() {
+	ASSERT_EQUAL(0, plus(0, 0));
+}
+
+cute::suite make_suite_demo() {
+	cute::suite s;
+	s.push_back(CUTE(testZeroPlusZero));
+	return s;
+}

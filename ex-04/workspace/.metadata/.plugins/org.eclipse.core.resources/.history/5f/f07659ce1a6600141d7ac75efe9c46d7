@@ -1,0 +1,9 @@
+int fibonacci(int input) {
+	if (inputt == 0 || input == 1) {
+		return 1;
+	}
+}
+
+int main(int argc, const char *argv[]) {
+	return 0;
+}

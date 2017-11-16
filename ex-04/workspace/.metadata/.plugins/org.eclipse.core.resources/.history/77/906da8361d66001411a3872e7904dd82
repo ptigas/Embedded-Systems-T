@@ -1,0 +1,20 @@
+#include "cute.h"
+#include "demo.h"
+
+int plus(int lhs, int rhs) {
+	return lhs + rhs;
+}
+
+int minus(int lhs, int rhs) {
+	return lhs - rhs;
+}
+
+void thisIsAdemoTest() {
+	ASSERTM("start writing tests", false);
+}
+
+cute::suite make_suite_demo() {
+	cute::suite s;
+	s.push_back(CUTE(thisIsAdemoTest));
+	return s;
+}
