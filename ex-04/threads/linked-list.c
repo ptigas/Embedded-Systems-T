@@ -114,7 +114,7 @@ void wait_for_threads(int *total, pthread_t *threads) {
 int main(void) {
 
   pthread_t threads[THREAD_COUNT];
-  list_t lists[THREAD_COUNT];
+  list_t *lists[THREAD_COUNT];
   
   list_t *list1 = create_list();
   populate(list1, 3);
@@ -127,9 +127,6 @@ int main(void) {
   list_t *list3 = create_list();
   populate(list3, 7);
   lists[2] = list3;
-  
-  pthread_t threads[THREAD_COUNT];
-  list_t lists[THREAD_COUNT];
   
 
   int total = 0;
