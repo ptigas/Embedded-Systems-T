@@ -72,9 +72,9 @@ void append_list(list_t *list, int new_val) {
 
 void populate(list_t *list, int max) {
 
-	int i;
-	for (i = 0; i < max; i++)
-		append_list(list, i);
+  int i;
+  for (i = 0; i < max; i++)
+    append_list(list, i);
 }
 
 int total(list_t *list) {
@@ -86,7 +86,7 @@ int total(list_t *list) {
 void * get_sum(void *list_opaque){
 	list_t *list = (list_t *) list_opaque;
 	pthread_exit((void*) total(list));
-}
+}
 
 void initialise_threads(list_t **lists, pthread_t *threads) {
 
@@ -97,7 +97,8 @@ void initialise_threads(list_t **lists, pthread_t *threads) {
     {
       printf("Can not create a thread\n");
       exit(1);
-    }  }
+    }
+  }
 }
 
 void wait_for_threads(int *total, pthread_t *threads) {
@@ -105,9 +106,9 @@ void wait_for_threads(int *total, pthread_t *threads) {
   int i;
   for (i = 0; i < THREAD_COUNT; i++)
   {
-    int value; 
+    void *value; 
     pthread_join(threads[i], (void **)&value);
-    *total += value;
+    *total += (int) value;
   }
 }
 

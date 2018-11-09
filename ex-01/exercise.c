@@ -3,7 +3,7 @@
 
 
 /**
- * Q3: Common type issues
+ * Q4: Common type issues
  */
 void run_types_exercise(void) {
   puts("Types exercises");
@@ -36,10 +36,24 @@ void run_types_exercise(void) {
   printf("T4: initial == up_cast (%d != %d)? What is the difference to the previous situation?\n\n\n", initial, up_cast);
 }
 
+/**
+ * Q5: Cube calculator
+ */
+void run_get_cube(){
+  // Look up scanf to find out how to get user input.
+  // TODO: Implement
+}
 
 /**
- * Q4: Bitwise operations
+ * Q6: Bitwise operations
  */
+int flip_lsb(int value){
+  // I will do the first one so you may get an idea.
+
+  // We need to flip the least significant bit. We will use the XOR!
+  return value ^ 0x00000001; 
+}
+
 int flip_msb(int value) {
   // TODO: Implement
   return value;
@@ -50,6 +64,7 @@ int clear_lsb(int value) {
   return value;
 }
 
+// Set the value of the most significant bit to the least significant bit.
 int set_lsb_to_msb(int value) {
   // TODO: Implement
   return value;
@@ -67,7 +82,7 @@ int count_number_of_set_bits(int value) {
 
 
 /**
- * Q5: Coordinates exercise
+ * Q7: Coordinates exercise
  */
 double distance_between_coordinates(int x1, int y1, int x2, int y2) {
   // TODO: Implement: Calculate the distance between the two points
@@ -82,15 +97,27 @@ double distance_between_coordinates(int x1, int y1, int x2, int y2) {
   return 0.0;
 }
 
+/**
+ * Q8: Time conversion
+ */
+void run_time_converter(void) {
+  // TODO: Implement. Hint: Look up modulus operator!
+}
 
 /**
- * Q6: Echo program
+ * Q9: Echo program
  */
 void run_echo_exercise(void) {
   // TODO: Write a program which echoes every line of code entered, until an "exit" line is received.
 }
 
 
+/**
+ * Q10: Recursive program
+ */
+void run_recursive_print(void) {
+  // TODO: Write a program which echoes every line of code entered, until an "exit" line is received.
+}
 
 void run_coordinates_exercise(void) {
   puts("Coordinates exercise tests");
@@ -106,6 +133,8 @@ void run_coordinates_exercise(void) {
 void run_bitwise_exercises(void) {
   puts("Bitwise exercise tests");
   puts("------------------------------\n");
+  assert_equal_hex(flip_lsb(0x00000001), 0x00000000);
+  assert_equal_hex(flip_lsb(0x00000000), 0x00000001);
   assert_equal_hex(flip_msb(0x80000000), 0x00000000);
   assert_equal_hex(flip_msb(0x00000000), 0x80000000);
   assert_equal_hex(flip_msb(0x01234567), 0x81234567);
@@ -126,8 +155,11 @@ void run_bitwise_exercises(void) {
 int main(void) {
   run_types_exercise();
   run_coordinates_exercise();
+  run_get_cube();
   run_bitwise_exercises();
+  run_time_converter();
   run_echo_exercise();
+  run_recursive_print();
 
   return 0;
 }
