@@ -1,1 +1,0 @@
-demo.d: ../demo.c
