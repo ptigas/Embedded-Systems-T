@@ -12,6 +12,7 @@ $(EXE): $(OBJ)
 	@echo ' '
 
 build/%.o: %.c
+	mkdir -p build
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
 	gcc -O0 -g0 -Wall -c -o "$@" "$<"
